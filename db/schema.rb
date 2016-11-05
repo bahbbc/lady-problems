@@ -10,17 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161105215253) do
+ActiveRecord::Schema.define(version: 20161105222809) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "users", force: :cascade do |t|
-    t.string   "full_name",                                null: false
+    t.string   "full_name"
     t.string   "email",                                    null: false
-    t.integer  "age",                                      null: false
+    t.integer  "age"
     t.boolean  "age_confirmed",             default: true, null: false
-    t.string   "facebook_id",                              null: false
+    t.string   "facebook_id"
     t.datetime "created_at",                               null: false
     t.datetime "updated_at",                               null: false
     t.text     "prev_conversation_context"
