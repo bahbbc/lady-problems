@@ -1,7 +1,9 @@
+require 'dotenv-rails'
+
 Facebook::Messenger.configure do |config|
-  config.access_token = ENV.fetch(FB_ACCESS_TOKEN)
-  config.app_secret   = ENV.fetch(FB_APP_SECRET)
-  config.verify_token = ENV.fetch(FB_VERIFY_TOKEN)
+  config.access_token = ENV.fetch('FB_ACCESS_TOKEN')
+  config.app_secret   = ENV.fetch('FB_APP_SECRET')
+  config.verify_token = ENV.fetch('FB_VERIFY_TOKEN')
 end
 
 unless Rails.env.production?
