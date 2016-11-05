@@ -2,7 +2,9 @@ require 'faraday'
 require 'json'
 
 class Conversation
-  def initialize
+  def initialize(initial_context = nil)
+    @prev_context = initial_context
+
     workspace_id = ENV.fetch('WORKSPACE_ID')
     @connection = Faraday.new(
       url: "https://gateway.watsonplatform.net/conversation/api/v1/workspaces/#{workspace_id}/message?version=2016-09-20",
@@ -22,7 +24,7 @@ class Conversation
       context: {},
     }
 
-    if defined?(@prev_context)
+    unless @prev_context.blank?
       body[:context] = @prev_context
     end
 
