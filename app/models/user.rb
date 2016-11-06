@@ -12,7 +12,7 @@ class User < ApplicationRecord
 
     updated_user = response['context']['user']
     if updated_user
-      assign_attributes(updated_user.slice(*attribute_names))
+      assign_attributes(updated_user.slice(*attribute_names, 'last_menstruation_day', 'last_menstruation_month'))
       save
     end
 
