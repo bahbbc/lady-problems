@@ -24,7 +24,7 @@ class MessageCreator
   private
 
   def intent_text
-    date = NextMenstruationDateCalculator.new(user).calculate.strftime('%d/%m')
+    date = NextMenstruationDateCalculator.new(@user).calculate.strftime('%d/%m')
     { text: "Seu próximo ciclo começará por volta do dia #{date}." }
   end
 
