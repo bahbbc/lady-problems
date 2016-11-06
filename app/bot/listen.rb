@@ -21,4 +21,5 @@ Bot.on :message do |message|
     }
   )
   AnticonceptionalMessageWorker.perform_in(15.seconds, user.facebook_id)
+  NextMenstruationMessageWorker.perform_in(30.seconds, user.facebook_id)
 end
