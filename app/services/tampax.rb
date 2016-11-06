@@ -122,9 +122,29 @@ class Tampax
   private
 
   def descrease_message
+    case @user.tampon_absorbency_type
+    when 'lite'
+      'Mude o seu absorvente para o tamanho regular para maior conforto.'
+    when 'regular'
+      'Mude o seu absorvente para o tamanho super para maior conforto.'
+    when 'super'
+      'Mude o seu absorvente para o tamanho super plus para maior conforto.'
+    else
+      'Mude o seu absorvente para o tamanho lite para maior conforto.'
+      end
   end
 
   def increase_message
+    case @user.tampon_absorbency_type
+    when 'lite'
+      'Mude o seu absorvente para o tamanho ultra para maior conforto.'
+    when 'regular'
+      'Mude o seu absorvente para o tamanho lite para maior conforto.'
+    when 'super'
+      'Mude o seu absorvente para o tamanho regular para maior conforto.'
+    else
+      'Mude o seu absorvente para o tamanho super plus para maior conforto.'
+    end
   end
 end
 
