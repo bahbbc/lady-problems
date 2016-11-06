@@ -20,7 +20,7 @@ Bot.on :postback do |postback|
     Bot.deliver(
       recipient: postback.sender,
       message: {
-        text: MessageCreator.new(user, payload.last)
+        text: MessageCreator.new(user, payload.last).build_message
       }
     )
   end

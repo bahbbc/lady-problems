@@ -17,7 +17,7 @@ class MessageCreator
   private
 
   def multiple_choice
-    query_conversation.dig('context', 'multiple_choice')
+    query_conversation.dig('output', 'multiple_choice')
   end
 
   def output_text
