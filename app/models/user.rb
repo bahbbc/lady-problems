@@ -36,7 +36,7 @@ class User < ApplicationRecord
     {
       user: {
         new: id.nil?,
-        full_name: full_name,
+        name: name,
       }
     }
   end
