@@ -130,7 +130,7 @@ class Tampax
         @user.disconfort_during_removal == rule[2] &&
         @user.flow == rule[3] &&
         @user.activity_level == rule[4]
-    end[4]
+    end[5]
   end
 
   def increase_message
