@@ -46,10 +46,7 @@ class MessageCreator
       {
         type: 'postback',
         title: btn['text'],
-        payload: {
-          category: 'BUTTON',
-          value: btn['value']
-        }
+        payload: "#{BUTTON} #{btn['value']}"
       }
     end
   end
