@@ -25,7 +25,7 @@ class MessageCreator
   end
 
   def query_conversation
-    @query_conversation ||= @user.query_conversation(@message.text)
+    @query_conversation ||= @user.query_conversation(@message)
   end
 
   def message_with_buttons
