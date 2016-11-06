@@ -27,11 +27,11 @@ class MessageCreator
 
 
   def has_intents?
-    query_conversation.dig('intents', 0).present?
+    !!query_conversation.dig('output', 'from_intent')
   end
 
   def low_confidence_on_intents?
-    query_conversation.dig('intents', 0, 'confidence') < 0.80
+    query_conversation.dig('intents', 0, 'confidence') < 0.70
   end
 
   def dont_know_message
