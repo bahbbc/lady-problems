@@ -5,13 +5,13 @@ Facebook::Messenger::Subscriptions.subscribe
 
 Bot.on :postback do |postback|
   facebook_user_retriever = FacebookUserRetriever.new(postback.sender['id'])
-  User.where(facebook_id: postback.sender['id']).first_or_create(name: facebook_user_retriever.first_name)
+  user = User.where(facebook_id: postback.sender['id']).first_or_create(name: facebook_user_retriever.first_name)
 
   if postback.payload == 'NEW_THREAD_POSTBACK'
     Bot.deliver(
       recipient: postback.sender,
       message: {
-        text: "Olá, #{name}! Sou a Malina, vou te ajudar com seu ciclo menstrual and stuff! leroleroeleoroel asdasodhasodi asidh asidh asodh asdoihasodi hasdoiash doaisdhoasidhaosid asdoias"
+        text: "Olá, #{user.name}! Sou a Malina, vou te ajudar com seu ciclo menstrual and stuff! leroleroeleoroel asdasodhasodi asidh asidh asodh asdoihasodi hasdoiash doaisdhoasidhaosid asdoias"
       }
     )
   elsif postback.payload == 'YES'
