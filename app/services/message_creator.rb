@@ -7,7 +7,7 @@ class MessageCreator
   end
 
   def build_message
-    if multiple_choice.empty?
+    if multiple_choice.blank?
       { text: output_text }
     else
       message_with_buttons
