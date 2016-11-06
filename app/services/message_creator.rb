@@ -12,7 +12,8 @@ class MessageCreator
       NextMenstruationMessageWorker.perform_in(1.minute, @user.facebook_id)
     end
 
-    return intent_text if pure_intent?
+    return next_menstruation_message if pure_intent?
+    return tampax_message if tampax?
 
     if multiple_choice.blank?
       { text: output_text }
@@ -23,9 +24,17 @@ class MessageCreator
 
   private
 
-  def intent_text
+  def tampax_message
+    { text: Tampax.new(@user).build_message }
+  end
+
+  def next_menstruation_message
     date = NextMenstruationDateCalculator.new(@user).calculate.strftime('%d/%m')
     { text: "Seu próximo ciclo começará por volta do dia #{date}." }
+  end
+
+  def tampax?
+    query_conversation.dig('output', 'tampax')
   end
 
   def pure_intent?
