@@ -12,6 +12,7 @@ class MessageCreator
       NextMenstruationMessageWorker.perform_in(1.minute, @user.facebook_id)
     end
 
+    return dont_know_message if has_intents? && low_confidence_on_intents?
     return next_menstruation_message if pure_intent?
     return tampax_message if tampax?
 
@@ -23,6 +24,26 @@ class MessageCreator
   end
 
   private
+
+
+  def has_intents?
+    query_conversation.dig('intents', 0).present?
+  end
+
+  def low_confidence_on_intents?
+    query_conversation.dig('intents', 0, 'confidence') < 0.80
+  end
+
+  def dont_know_message
+    {
+      text: <<-STR
+Não entendi. Você pode me perguntar outras coisas como:
+- O que fazer se você esqueceu de tomar o anticoncepcional;
+- Que tipo de absorvente interno usar;
+- Quando começa o seu próximo ciclo;
+      STR
+    }
+  end
 
   def tampax_message
     { text: Tampax.new(@user).build_message }
