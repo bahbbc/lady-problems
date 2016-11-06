@@ -19,9 +19,7 @@ Bot.on :postback do |postback|
   elsif payload.first == 'BUTTON'
     Bot.deliver(
       recipient: postback.sender,
-      message: {
-        text: MessageCreator.new(user, payload.last).build_message
-      }
+      message: MessageCreator.new(user, payload.last).build_message
     )
   end
 end
