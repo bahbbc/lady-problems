@@ -10,7 +10,7 @@ class User < ApplicationRecord
     response = conversation.send_message(user_input)
     self.prev_conversation_context = JSON.dump(response['context'])
 
-    updated_user = response['context']['user']
+    updated_user = response.dig('context', 'user')
     if updated_user
       assign_attributes(updated_user.slice(*attribute_names, 'last_menstruation_day', 'last_menstruation_month'))
       save
