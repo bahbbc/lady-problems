@@ -1,10 +1,12 @@
 require 'facebook/messenger'
 
-class AnticonceptionalMessageWorker
+class NextMenstruationMessageWorker
   include Sidekiq::Worker
   include Facebook::Messenger
 
   def perform(user_facebook_id)
+    user = User.find_by(facebook_id: facebook_id)
+
     Bot.deliver(
       recipient: { id: user_facebook_id },
       message: {

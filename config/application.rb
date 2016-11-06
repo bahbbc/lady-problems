@@ -28,7 +28,7 @@ module LadyproblemsHackathon
     config.api_only = true
 
 
-    config.paths.add File.join("app", "bot", "services"), glob: File.join("**","*.rb")
+    config.paths.add File.join("app", "bot", "services", "workers"), glob: File.join("**","*.rb")
     config.autoload_paths += Dir[Rails.root.join("app", "bot", "*")]
   end
 end
