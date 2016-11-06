@@ -9,10 +9,8 @@ Bot.on :message do |message|
 
   Bot.deliver(
     recipient: message.sender,
-    message: {
-      text: message_service.message
-    }
+    message: message_service.build_message
   )
-  AnticonceptionalMessageWorker.perform_in(3.seconds, user.facebook_id)
-  NextMenstruationMessageWorker.perform_in(5.seconds, user.facebook_id)
+  # AnticonceptionalMessageWorker.perform_in(3.seconds, user.facebook_id)
+  # NextMenstruationMessageWorker.perform_in(5.seconds, user.facebook_id)
 end

@@ -14,35 +14,11 @@ Bot.on :postback do |postback|
         text: user.initial_message.dig('output', 'text')[0]
       }
     )
-  elsif postback.payload == 'YES'
+  elsif postback.payload['category'] == 'BUTTON'
     Bot.deliver(
       recipient: postback.sender,
       message: {
-        text: 'Noes'
-      }
-    )
-  elsif postback.payload == 'NO'
-    Bot.deliver(
-      recipient: postback.sender,
-      message: {
-        text: 'Poxa, vida'
-      }
-    )
-  elsif postback.payload == 'MAYBE'
-    Bot.deliver(
-      recipient: postback.sender,
-      message: {
-        attachment: {
-          type: 'template',
-          payload: {
-            template_type: 'button',
-            text: 'Decide aí, tio',
-            buttons: [
-              { type: 'postback', title: 'Siiiim', payload: 'YES' },
-              { type: 'postback', title: 'Nops', payload: 'NO' }
-            ]
-          }
-        }
+        text: MessageCreator.new(user, postback.payload['value'])
       }
     )
   end
