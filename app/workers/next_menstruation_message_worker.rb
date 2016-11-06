@@ -7,7 +7,7 @@ class NextMenstruationMessageWorker
   def perform(user_facebook_id)
     user = User.find_by(facebook_id: user_facebook_id)
 
-    next_menstruation_date = NextMenstruationDateCalculator(user).calculate
+    next_menstruation_date = NextMenstruationDateCalculator.new(user).calculate
 
     Bot.deliver(
       recipient: { id: user_facebook_id },
