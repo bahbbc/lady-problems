@@ -1,9 +1,9 @@
 class NextMenstruationDateCalculator
   def initialize(user)
-    @menstruation_date = user.menstruation_date
+    @user = user
   end
 
   def calculate
-    (@menstruation_date + 28.days)
+    (@user.menstruation_date + @user.menstruation_days.days)
   end
 end
