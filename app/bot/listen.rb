@@ -8,11 +8,11 @@ Bot.on :message do |message|
   message_service = MessageCreator.new(user, message.text)
 
   if message.text == 'passou 1 dia'
-    AnticonceptionalMessageWorker.perform_async(@user.facebook_id)
+    AnticonceptionalMessageWorker.perform_async(user.facebook_id)
   elsif message.text == 'passou 2 dias'
-    NextMenstruationMessageWorker.perform_async(@user.facebook_id)
+    NextMenstruationMessageWorker.perform_async(user.facebook_id)
   elsif message.text == 'passou 3 dias'
-    DidYouMenstruateMessageWorker.perform_async(@user.facebook_id)
+    DidYouMenstruateMessageWorker.perform_async(user.facebook_id)
   else
     Bot.deliver(
       recipient: message.sender,
