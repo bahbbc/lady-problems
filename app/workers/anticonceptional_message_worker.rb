@@ -8,7 +8,7 @@ class AnticonceptionalMessageWorker
     Bot.deliver(
       recipient: { id: user_facebook_id },
       message: {
-        text: 'Não se esqueça de tomar o seu anticoncepcional hoje!'
+        text: 'Não se esqueça de tomar o seu anticoncepcional hoje! #lembrete'
       }
     )
   end
