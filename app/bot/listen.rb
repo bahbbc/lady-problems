@@ -4,8 +4,8 @@ include Facebook::Messenger
 Facebook::Messenger::Subscriptions.subscribe
 
 Bot.on :message do |message|
-  name = FacebookUserRetriever.new.name_by_sender_id(message.sender['id'])
-  message_service = MessageCreator.new(name, message)
+  user = User.find_by(facebook_id: message.sender['id'])
+  message_service = MessageCreator.new(user, message)
 
   Bot.deliver(
     recipient: message.sender,

@@ -1,13 +1,13 @@
 require 'net/http'
 
 class MessageCreator
-  def initialize(name, message)
+  def initialize(user, message)
     @message = message
-    @name = name
+    @user = user
   end
 
   def message
-    "#{@name}: #{@message.text}"
+    "#{@user.name}: #{@message.text}"
   end
 
   def buttons
