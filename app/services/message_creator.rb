@@ -12,6 +12,8 @@ class MessageCreator
       NextMenstruationMessageWorker.perform_in(1.minute, @user.facebook_id)
     end
 
+    return intent_text if pure_intent?
+
     if multiple_choice.blank?
       { text: output_text }
     else
@@ -20,6 +22,15 @@ class MessageCreator
   end
 
   private
+
+  def intent_text
+    date = NextMenstruationDateCalculator.new(user).calculate.strftime('%d/%m')
+    { text: "Seu próximo ciclo começará por volta do dia #{date}." }
+  end
+
+  def pure_intent?
+    query_conversation.dig('output', 'pure_intent')
+  end
 
   def send_reminders?
     query_conversation.dig('output', 'send_reminders')
