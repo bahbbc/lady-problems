@@ -3,99 +3,99 @@ class Tampax
     ['0-3', true, true, 'decrease', 'low', 'same'],
     ['0-3', true, true, 'decrease', 'moderate', 'increase'],
     ['0-3', true, true, 'decrease', 'high', 'increase'],
-    ['0-3', true, true, 'decrease', 'sleep', 'increase'],
+    ['0-3', true, true, 'decrease', 'high', 'increase'],
     ['0-3', true, true, 'same', 'low', 'increase'],
     ['0-3', true, true, 'same', 'moderate', 'increase'],
     ['0-3', true, true, 'same', 'high', 'increase'],
-    ['0-3', true, true, 'same', 'sleep', 'increase'],
+    ['0-3', true, true, 'same', 'high', 'increase'],
     ['0-3', true, true, 'increase', 'low', 'increase'],
     ['0-3', true, true, 'increase', 'moderate', 'increase'],
     ['0-3', true, true, 'increase', 'high', 'increase'],
-    ['0-3', true, true, 'increase', 'sleep', 'increase'],
+    ['0-3', true, true, 'increase', 'high', 'increase'],
     ['>3', true, true, 'decrease', 'low', 'less'],
     ['>3', true, true, 'decrease', 'moderate', 'less'],
     ['>3', true, true, 'decrease', 'high', 'increase'],
-    ['>3', true, true, 'decrease', 'sleep', 'increase'],
+    ['>3', true, true, 'decrease', 'high', 'increase'],
     ['>3', true, true, 'same', 'low', 'less'],
     ['>3', true, true, 'same', 'moderate', 'less'],
     ['>3', true, true, 'same', 'high', 'increase'],
-    ['>3', true, true, 'same', 'sleep', 'increase'],
+    ['>3', true, true, 'same', 'high', 'increase'],
     ['>3', true, true, 'increase', 'low', 'increase'],
     ['>3', true, true, 'increase', 'moderate', 'increase'],
     ['>3', true, true, 'increase', 'high', 'increase'],
-    ['>3', true, true, 'increase', 'sleep', 'increase'],
+    ['>3', true, true, 'increase', 'high', 'increase'],
     ['0-3', true, false, 'decrease', 'low', 'same'],
     ['0-3', true, false, 'decrease', 'moderate', 'same'],
     ['0-3', true, false, 'decrease', 'high', 'increase'],
-    ['0-3', true, false, 'decrease', 'sleep', 'increase'],
+    ['0-3', true, false, 'decrease', 'high', 'increase'],
     ['0-3', true, false, 'same', 'low', 'increase'],
     ['0-3', true, false, 'same', 'moderate', 'increase'],
     ['0-3', true, false, 'same', 'high', 'increase'],
-    ['0-3', true, false, 'same', 'sleep', 'increase'],
+    ['0-3', true, false, 'same', 'high', 'increase'],
     ['0-3', true, false, 'increase', 'low', 'increase'],
     ['0-3', true, false, 'increase', 'moderate', 'increase'],
     ['0-3', true, false, 'increase', 'high', 'increase'],
-    ['0-3', true, false, 'increase', 'sleep', 'increase'],
+    ['0-3', true, false, 'increase', 'high', 'increase'],
     ['>3', true, false, 'decrease', 'low', 'less'],
     ['>3', true, false, 'decrease', 'moderate', 'less'],
     ['>3', true, false, 'decrease', 'high', 'increase'],
-    ['>3', true, false, 'decrease', 'sleep', 'increase'],
+    ['>3', true, false, 'decrease', 'high', 'increase'],
     ['>3', true, false, 'same', 'low', 'less'],
     ['>3', true, false, 'same', 'moderate', 'less'],
     ['>3', true, false, 'same', 'high', 'increase'],
-    ['>3', true, false, 'same', 'sleep', 'increase'],
+    ['>3', true, false, 'same', 'high', 'increase'],
     ['>3', true, false, 'increase', 'low', 'increase'],
     ['>3', true, false, 'increase', 'moderate', 'increase'],
     ['>3', true, false, 'increase', 'high', 'increase'],
-    ['>3', true, false, 'increase', 'sleep', 'increase'],
+    ['>3', true, false, 'increase', 'high', 'increase'],
     ['0-3', false, true, 'decrease', 'low', 'decrease'],
     ['0-3', false, true, 'decrease', 'moderate', 'decrease'],
     ['0-3', false, true, 'decrease', 'high', 'same'],
-    ['0-3', false, true, 'decrease', 'sleep', 'same'],
+    ['0-3', false, true, 'decrease', 'high', 'same'],
     ['0-3', false, true, 'same', 'low', 'decrease'],
     ['0-3', false, true, 'same', 'moderate', 'longer'],
     ['0-3', false, true, 'same', 'high', 'longer'],
-    ['0-3', false, true, 'same', 'sleep', 'longer'],
+    ['0-3', false, true, 'same', 'high', 'longer'],
     ['0-3', false, true, 'increase', 'low', 'decrease'],
     ['0-3', false, true, 'increase', 'moderate', 'longer'],
     ['0-3', false, true, 'increase', 'high', 'longer'],
-    ['0-3', false, true, 'increase', 'sleep', 'longer'],
+    ['0-3', false, true, 'increase', 'high', 'longer'],
     ['>3', false, true, 'decrease', 'low', 'decrease'],
     ['>3', false, true, 'decrease', 'moderate', 'decrease'],
     ['>3', false, true, 'decrease', 'high', 'same'],
-    ['>3', false, true, 'decrease', 'sleep', 'same'],
+    ['>3', false, true, 'decrease', 'high', 'same'],
     ['>3', false, true, 'same', 'low', 'decrease'],
     ['>3', false, true, 'same', 'moderate', 'decrease'],
     ['>3', false, true, 'same', 'high', 'same'],
-    ['>3', false, true, 'same', 'sleep', 'same'],
+    ['>3', false, true, 'same', 'high', 'same'],
     ['>3', false, true, 'increase', 'low', 'same'],
     ['>3', false, true, 'increase', 'moderate', 'same'],
     ['>3', false, true, 'increase', 'high', 'same'],
-    ['>3', false, true, 'increase', 'sleep', 'same'],
+    ['>3', false, true, 'increase', 'high', 'same'],
     ['0-3', false, false, 'decrease', 'low', 'decrease'],
     ['0-3', false, false, 'decrease', 'moderate', 'same'],
     ['0-3', false, false, 'decrease', 'high', 'same'],
-    ['0-3', false, false, 'decrease', 'sleep', 'same'],
+    ['0-3', false, false, 'decrease', 'high', 'same'],
     ['0-3', false, false, 'same', 'low', 'same'],
     ['0-3', false, false, 'same', 'moderate', 'same'],
     ['0-3', false, false, 'same', 'high', 'same'],
-    ['0-3', false, false, 'same', 'sleep', 'same'],
+    ['0-3', false, false, 'same', 'high', 'same'],
     ['0-3', false, false, 'increase', 'low', 'same'],
     ['0-3', false, false, 'increase', 'moderate', 'same'],
     ['0-3', false, false, 'increase', 'high', 'increase'],
-    ['0-3', false, false, 'increase', 'sleep', 'increase'],
+    ['0-3', false, false, 'increase', 'high', 'increase'],
     ['>3', false, false, 'decrease', 'low', 'decrease'],
     ['>3', false, false, 'decrease', 'moderate', 'same'],
     ['>3', false, false, 'decrease', 'high', 'same'],
-    ['>3', false, false, 'decrease', 'sleep', 'same'],
+    ['>3', false, false, 'decrease', 'high', 'same'],
     ['>3', false, false, 'same', 'low', 'same'],
     ['>3', false, false, 'same', 'moderate', 'same'],
     ['>3', false, false, 'same', 'high', 'same'],
-    ['>3', false, false, 'same', 'sleep', 'same'],
+    ['>3', false, false, 'same', 'high', 'same'],
     ['>3', false, false, 'increase', 'low', 'same'],
     ['>3', false, false, 'increase', 'moderate', 'same'],
     ['>3', false, false, 'increase', 'high', 'increase'],
-    ['>3', false, false, 'increase', 'sleep', 'increase'],
+    ['>3', false, false, 'increase', 'high', 'increase']
   ]
 
   def intialize(user)
@@ -113,7 +113,7 @@ class Tampax
       'Continue usando o mesmo nível de absorção na sua próxima troca,'\
       ' mas use-o por menos de 3 horas para que não haja mais vazamentos.'
     when 'decrease'
-      descrease_message
+      decrease_message
     when 'increase'
       increase_message
     else
@@ -133,31 +133,29 @@ class Tampax
     end[4]
   end
 
-  def descrease_message
+  def increase_message
     case @user.tampon_absorbency_type
     when 'lite'
       'Mude o seu absorvente para o tamanho regular para maior conforto.'
     when 'regular'
       'Mude o seu absorvente para o tamanho super para maior conforto.'
     when 'super'
-      'Mude o seu absorvente para o tamanho super plus para maior conforto.'
-    else
       'Mude o seu absorvente para o tamanho lite para maior conforto.'
-      end
+    else
+      'Não sei, desculpa ):'
+    end
   end
 
-  def increase_message
+  def decrease_message
     case @user.tampon_absorbency_type
     when 'lite'
-      'Mude o seu absorvente para o tamanho ultra para maior conforto.'
+      'Mude o seu absorvente para o tamanho super para maior conforto.'
     when 'regular'
       'Mude o seu absorvente para o tamanho lite para maior conforto.'
     when 'super'
       'Mude o seu absorvente para o tamanho regular para maior conforto.'
     else
-      'Mude o seu absorvente para o tamanho super plus para maior conforto.'
+      'Não sei, desculpa ):'
     end
   end
 end
-
-
