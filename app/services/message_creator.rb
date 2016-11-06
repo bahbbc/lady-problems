@@ -8,8 +8,8 @@ class MessageCreator
 
   def build_message
     if send_reminders?
-      AnticonceptionalMessageWorker.perform_in(15.seconds, @user.facebook_id)
-      NextMenstruationMessageWorker.perform_in(30.seconds, @user.facebook_id)
+      AnticonceptionalMessageWorker.perform_in(40.seconds, @user.facebook_id)
+      NextMenstruationMessageWorker.perform_in(1.minute, @user.facebook_id)
     end
 
     if multiple_choice.blank?
