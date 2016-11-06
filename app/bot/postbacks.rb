@@ -11,7 +11,7 @@ Bot.on :postback do |postback|
     Bot.deliver(
       recipient: postback.sender,
       message: {
-        text: "Olá, #{user.name}! Sou a Malina, vou te ajudar com seu ciclo menstrual and stuff! leroleroeleoroel asdasodhasodi asidh asidh asodh asdoihasodi hasdoiash doaisdhoasidhaosid asdoias"
+        text: user.initial_message.dig('output', 'text')[0]
       }
     )
   elsif postback.payload == 'YES'

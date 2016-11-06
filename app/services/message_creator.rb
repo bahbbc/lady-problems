@@ -7,14 +7,11 @@ class MessageCreator
   end
 
   def message
-    "#{@user.name}: #{@message.text}"
+    @user.query_conversation(@message.text).dig('output', 'text')[0]
   end
 
   def buttons
     [
-      { type: 'postback', title: 'Siiiim', payload: 'YES' },
-      { type: 'postback', title: 'Nops', payload: 'NO' },
-      { type: 'postback', title: 'Se pá', payload: 'MAYBE' }
     ]
   end
 end

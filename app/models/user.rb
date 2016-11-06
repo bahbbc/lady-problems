@@ -13,6 +13,7 @@ class User < ApplicationRecord
     updated_user = response['context']['user']
     if updated_user
       assign_attributes(updated_user.slice(*attribute_names))
+      save
     end
 
     response
