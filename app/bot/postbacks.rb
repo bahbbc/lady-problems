@@ -35,6 +35,7 @@ Bot.on :postback do |postback|
         attachment: {
           type: 'template',
           payload: {
+            template_type: 'button',
             text: 'Decide aí, tio',
             buttons: [
               { type: 'postback', title: 'Siiiim', payload: 'YES' },

@@ -13,6 +13,7 @@ Bot.on :message do |message|
       attachment: {
         type: 'template',
         payload: {
+          template_type: 'button',
           text: message_service.message,
           buttons: message_service.buttons
         }
