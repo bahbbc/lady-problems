@@ -98,7 +98,7 @@ class Tampax
     ['>3', false, false, 'increase', 'high', 'increase']
   ]
 
-  def intialize(user)
+  def initialize(user)
     @user = user
   end
 
