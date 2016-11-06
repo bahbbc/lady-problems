@@ -7,12 +7,12 @@ class NextMenstruationMessageWorker
   def perform(user_facebook_id)
     user = User.find_by(facebook_id: user_facebook_id)
 
-    next_menstruation_date = NextMenstruationDateCalculator.new(user).calculate
+    days = (NextMenstruationDateCalculator.new(user).calculate - Date.today).to_i
 
     Bot.deliver(
       recipient: { id: user_facebook_id },
       message: {
-        text: "Seu próximo ciclo se iniciará por volta do dia #{next_menstruation_date}"
+        text: "Seu próximo ciclo se iniciará em #{days} dias #lembrete"
       }
     )
   end
