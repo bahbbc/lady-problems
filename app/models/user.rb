@@ -19,6 +19,22 @@ class User < ApplicationRecord
     response
   end
 
+  def last_menstruation_day=(value)
+    @last_menstruation_day = value.to_i
+
+    if @last_menstruation_month
+      self.menstruation_date = Date.new(2016, @last_menstruation_month, @last_menstruation_day)
+    end
+  end
+
+  def last_menstruation_month=(value)
+    @last_menstruation_month = value.to_i
+
+    if @last_menstruation_day
+      self.menstruation_date = Date.new(2016, @last_menstruation_month, @last_menstruation_day)
+    end
+  end
+
   private
 
   def conversation
