@@ -3,7 +3,7 @@ require 'net/http'
 class FacebookUserRetriever
   def initialize(sender_id)
     @sender_id = sender_id
-    @request = request_to_facebook(sender_id)
+    @request = request_to_facebook
   end
 
   def first_name
