@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
   def query_conversation(user_input)
     response = conversation.send_message(user_input)
-    self.prev_conversation_context = response['context']
+    self.prev_conversation_context = JSON.dump(response['context'])
 
     updated_user = response['context']['user']
     if updated_user
