@@ -35,7 +35,7 @@ class User < ApplicationRecord
   def user_context
     {
       user: {
-        new: id.nil?,
+        new: true,
         name: name,
       }
     }
