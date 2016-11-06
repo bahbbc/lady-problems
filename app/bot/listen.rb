@@ -11,6 +11,4 @@ Bot.on :message do |message|
     recipient: message.sender,
     message: message_service.build_message
   )
-  # AnticonceptionalMessageWorker.perform_in(3.seconds, user.facebook_id)
-  # NextMenstruationMessageWorker.perform_in(5.seconds, user.facebook_id)
 end

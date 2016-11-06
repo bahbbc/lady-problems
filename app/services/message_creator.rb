@@ -7,6 +7,11 @@ class MessageCreator
   end
 
   def build_message
+    if send_reminders?
+      AnticonceptionalMessageWorker.perform_in(15.seconds, @user.facebook_id)
+      NextMenstruationMessageWorker.perform_in(30.seconds, @user.facebook_id)
+    end
+
     if multiple_choice.blank?
       { text: output_text }
     else
@@ -15,6 +20,10 @@ class MessageCreator
   end
 
   private
+
+  def send_reminders?
+    query_conversation.dig('output', 'send_reminders')
+  end
 
   def multiple_choice
     query_conversation.dig('output', 'multiple_choice')
