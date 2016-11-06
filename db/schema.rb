@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161106013244) do
+ActiveRecord::Schema.define(version: 20161106035234) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20161106013244) do
     t.integer  "anticoncepcional_pause_days"
     t.integer  "anticoncepcional_hour"
     t.integer  "contraceptive"
+    t.date     "menstruation_date"
   end
 
 end
