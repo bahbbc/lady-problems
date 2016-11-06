@@ -14,5 +14,30 @@ Bot.on :postback do |postback|
         text: "Olá, #{name}! Sou a Malina, vou te ajudar com seu ciclo menstrual and stuff! leroleroeleoroel asdasodhasodi asidh asidh asodh asdoihasodi hasdoiash doaisdhoasidhaosid asdoias"
       }
     )
+  elsif postback.payload == 'YES'
+    Bot.deliver(
+      recipient: postback.sender,
+      message: {
+        text: "Noes"
+      }
+    )
+  elsif postback.payload == 'NO'
+    Bot.deliver(
+      recipient: postback.sender,
+      message: {
+        text: "Poxa, vida"
+      }
+    )
+  elsif postback.payload == 'MAYBE'
+    Bot.deliver(
+      recipient: postback.sender,
+      message: {
+        text: "Decide aí, tio",
+        buttons: [
+          { type: 'postback', title: 'Siiiim', payload: 'YES' },
+          { type: 'postback', title: 'Nops', payload: 'NO' }
+        ]
+      }
+    )
   end
 end
