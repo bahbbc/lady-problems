@@ -7,11 +7,11 @@ Bot.on :message do |message|
   user = User.find_by(facebook_id: message.sender['id'])
   message_service = MessageCreator.new(user, message.text)
 
-  if message.text == 'passou 1 dia'
+  if message.text == '#tempo1'
     AnticonceptionalMessageWorker.perform_async(user.facebook_id)
-  elsif message.text == 'passou 2 dias'
+  elsif message.text == '#tempo2'
     NextMenstruationMessageWorker.perform_async(user.facebook_id)
-  elsif message.text == 'passou 3 dias'
+  elsif message.text == '#tempo3'
     DidYouMenstruateMessageWorker.perform_async(user.facebook_id)
   else
     Bot.deliver(
