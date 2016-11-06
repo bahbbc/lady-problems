@@ -10,8 +10,13 @@ Bot.on :message do |message|
   Bot.deliver(
     recipient: message.sender,
     message: {
-      text: message_service.message,
-      buttons: message_service.buttons
+      attachment: {
+        type: 'template',
+        payload: {
+          text: message_service.message,
+          buttons: message_service.buttons
+        }
+      }
     }
   )
 end
