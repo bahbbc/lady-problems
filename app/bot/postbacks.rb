@@ -32,11 +32,16 @@ Bot.on :postback do |postback|
     Bot.deliver(
       recipient: postback.sender,
       message: {
-        text: 'Decide aí, tio',
-        buttons: [
-          { type: 'postback', title: 'Siiiim', payload: 'YES' },
-          { type: 'postback', title: 'Nops', payload: 'NO' }
-        ]
+        attachment: {
+          type: 'template',
+          payload: {
+            text: 'Decide aí, tio',
+            buttons: [
+              { type: 'postback', title: 'Siiiim', payload: 'YES' },
+              { type: 'postback', title: 'Nops', payload: 'NO' }
+            ]
+          }
+        }
       }
     )
   end
