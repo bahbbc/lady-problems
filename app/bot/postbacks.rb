@@ -18,21 +18,21 @@ Bot.on :postback do |postback|
     Bot.deliver(
       recipient: postback.sender,
       message: {
-        text: "Noes"
+        text: 'Noes'
       }
     )
   elsif postback.payload == 'NO'
     Bot.deliver(
       recipient: postback.sender,
       message: {
-        text: "Poxa, vida"
+        text: 'Poxa, vida'
       }
     )
   elsif postback.payload == 'MAYBE'
     Bot.deliver(
       recipient: postback.sender,
       message: {
-        text: "Decide aí, tio",
+        text: 'Decide aí, tio',
         buttons: [
           { type: 'postback', title: 'Siiiim', payload: 'YES' },
           { type: 'postback', title: 'Nops', payload: 'NO' }
