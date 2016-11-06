@@ -5,7 +5,7 @@ class NextMenstruationMessageWorker
   include Facebook::Messenger
 
   def perform(user_facebook_id)
-    user = User.find_by(facebook_id: facebook_id)
+    user = User.find_by(facebook_id: user_facebook_id)
 
     next_menstruation_date = NextMenstruationDateCalculator(user).calculate
 
