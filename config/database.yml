@@ -32,7 +32,4 @@ test:
   database: ladyproblems-hackathon_test
 
 production:
-  <<: *default
-  database: ladyproblems-hackathon_production
-  username: ladyproblems-hackathon
-  password: <%= ENV['LADYPROBLEMS-HACKATHON_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
