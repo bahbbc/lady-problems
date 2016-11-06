@@ -21,5 +21,18 @@ Bot.on :postback do |postback|
       recipient: postback.sender,
       message: MessageCreator.new(user, payload.last).build_message
     )
+  elsif payload.first == 'I_MENSTRUATED_TODAY'
+    user.menstruation_date = Date.today
+    user.save
+
+    Bot.deliver(
+      recipient: postback.sender,
+      message: { text: 'Dados atualizados com sucesso!' }
+    )
+  elsif payload.first == 'I_DIDNT_MENSTRUATED_TODAY'
+    Bot.deliver(
+      recipient: postback.sender,
+      message: { text: 'Sua menstruação deve estar perto, perguntaremos de novo amanhã!' }
+    )
   end
 end

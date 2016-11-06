@@ -7,11 +7,6 @@ class MessageCreator
   end
 
   def build_message
-    if send_reminders?
-      AnticonceptionalMessageWorker.perform_in(40.seconds, @user.facebook_id)
-      NextMenstruationMessageWorker.perform_in(1.minute, @user.facebook_id)
-    end
-
     return dont_know_message if has_intents? && low_confidence_on_intents?
     return next_menstruation_message if pure_intent?
     return tampax_message if tampax?
