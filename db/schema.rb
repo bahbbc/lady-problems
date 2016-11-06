@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161106045621) do
+ActiveRecord::Schema.define(version: 20161106074146) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,12 @@ ActiveRecord::Schema.define(version: 20161106045621) do
     t.integer  "contraceptive"
     t.date     "menstruation_date"
     t.string   "tampon_type"
+    t.integer  "hours_wering_tampon"
+    t.boolean  "tampon_leak"
+    t.boolean  "disconfort_during_removal"
+    t.string   "flow"
+    t.string   "activity_level"
+    t.string   "tampon_absorbency_type"
   end
 
 end
