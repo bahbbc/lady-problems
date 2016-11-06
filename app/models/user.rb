@@ -10,6 +10,11 @@ class User < ApplicationRecord
     response = conversation.send_message(user_input)
     self.prev_conversation_context = response['context']
 
+    updated_user = response['context']['user']
+    if updated_user
+      assign_attributes(updated_user.slice(*attribute_names))
+    end
+
     response
   end
 
@@ -21,9 +26,18 @@ class User < ApplicationRecord
     if prev_conversation_context
       parsed_context = JSON.parse(prev_conversation_context)
     else
-      parsed_context = nil
+      parsed_context = {}
     end
 
-    @conversation = Conversation.new(parsed_context)
+    @conversation = Conversation.new(parsed_context.merge(user_context))
+  end
+
+  def user_context
+    {
+      user: {
+        new: id.nil?,
+        name: name,
+      }
+    }
   end
 end
