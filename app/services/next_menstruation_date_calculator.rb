@@ -4,6 +4,6 @@ class NextMenstruationDateCalculator
   end
 
   def calculate
-    @menstruation_date + 28.days
+    (@menstruation_date + 28.days).strftime('%d/%m')
   end
 end
